@@ -1,0 +1,60 @@
+vagrant@ubuntu-focal:~$ cd /home/vagrant/altschool/tests
+vagrant@ubuntu-focal:~/altschool/tests$ cd
+vagrant@ubuntu-focal:~$ cd altschool
+vagrant@ubuntu-focal:~/altschool$ cd tests
+vagrant@ubuntu-focal:~/altschool/tests$ cd ~
+vagrant@ubuntu-focal:~$ echo 'Hello A' > /home/vagrant/altschool/misc/fileA
+vagrant@ubuntu-focal:~$ cat /home/vagrant/altschool/misc/fileA
+Hello A
+vagrant@ubuntu-focal:~$ touch sud/home/vagrant/altschool/misc/fileB
+vagrant@ubuntu-focal:~$ ls /home/vagrant/altschool/misc
+fileA  fileB  fileC  fileD
+vagrant@ubuntu-focal:~$ cp /home/vagrant/altschool/misc/fileA /home/vagrant/altschool/misc/fileC
+vagrant@ubuntu-focal:~$ mv /home/vagrant/altschool/misc/fileB /home/vagrant/altschool/misc/fileD
+vagrant@ubuntu-focal:~$ tar -cvf /home/vagrant/altschool/misc.tar /home/vagrant/altschool/misc
+tar: Removing leading `/' from member names
+/home/vagrant/altschool/misc/
+/home/vagrant/altschool/misc/fileD
+/home/vagrant/altschool/misc/fileA
+/home/vagrant/altschool/misc/fileC
+vagrant@ubuntu-focal:~$ gzip /home/vagrant/altschool/misc.tar
+gzip: /home/vagrant/altschool/misc.tar.gz already exists; do you wish to overwrite (y or n)? y
+vagrant@ubuntu-focal:~$ sudo adduser kome
+Adding user `kome' ...
+Adding new group `kome' (1004) ...
+Adding new user `kome' (1004) with group `kome' ...
+Creating home directory `/home/kome' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for kome
+Enter the new value, or press ENTER for the default
+        Full Name []: Oghenekome Aderihoma
+        Room Number []: nil
+        Work Phone []: nil
+        Home Phone []: nil
+        Other []: nil
+Is the information correct? [Y/n] y
+vagrant@ubuntu-focal:~$ sudo passwd -e kome
+passwd: password expiry information changed.
+vagrant@ubuntu-focal:~$ ls /home
+kome  nwoke  ubuntu  vagrant
+vagrant@ubuntu-focal:~$ su kome
+Password:
+You are required to change your password immediately (administrator enforced)
+Changing password for kome.
+Current password:
+New password:
+Retype new password:
+kome@ubuntu-focal:/home/vagrant$ exit
+exit
+vagrant@ubuntu-focal:~$ sudo passwd -l kome
+passwd: password expiry information changed.
+vagrant@ubuntu-focal:~$ sudo useradd -s /sbin/nologin komzi
+vagrant@ubuntu-focal:~$ sudo nano /etc/ssh/sshd_config
+vagrant@ubuntu-focal:~$ sudo systemctl restart ssh
+
+
+
+
